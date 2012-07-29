@@ -4,7 +4,7 @@ import logging
 import sys
 import optparse
 
-from vishnje.launch import launch, javascript_exit_handling
+from vishnje import Application, javascript_exit_handling
 
 template = Template('''
 <!DOCTYPE html>
@@ -145,4 +145,4 @@ if __name__ == '__main__':
 
     logging.debug(page)
 
-    launch(page)
+    Application(page).launch()
