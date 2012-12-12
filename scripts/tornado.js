@@ -14,6 +14,16 @@ var chart = d3.select('body').append('svg')
     .attr('width',  total_w)
     .attr('height', total_h)
 
+/*
+// > detail(10, 20)
+function detail(d, i){
+        this.append('text')
+            .text(function(d, i){return d3.round(d) ;}).attr('x', biggest_point_radius + 40);
+        this.append('text')
+            .text(function(d, i){return (data.length - i) ;}).attr('fill', 'grey').attr('x', biggest_point_radius);
+}
+*/
+
 function start(){
     d3.json('/data', draw);
 }
@@ -43,13 +53,10 @@ function draw(data){
         })
         .style('fill-opacity', 0.5);
 
-    if(!compress){
-        g.append('text')
-            .text(function(d, i){return d3.round(d) ;}).attr('x', biggest_point_radius + 40);
-        g.append('text')
-            .text(function(d, i){return (data.length - i) ;}).attr('fill', 'grey').attr('x', biggest_point_radius);
-    }
+    /*
+        g.on('mouseover', detail);
+        */
 
     window.scrollTo(0,1000000);
 }
-window.onload = start;
+//window.onload = start;
