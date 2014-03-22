@@ -1,0 +1,21 @@
+{
+  "name": "tornado",
+  "main": "tornado.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/danse/tornado",
+  "authors": [
+    "danse <f.occhipinti@gmail.com>"
+  ],
+  "description": "time series visualisation",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.4.3"
+  }
+}

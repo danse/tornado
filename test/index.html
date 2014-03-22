@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <style>
+        body {
+          text-align: center;
+          padding: 100px;
+        }
+        path.domain {
+          stroke: black;
+          fill: none;
+        }
+        .big circle {
+            fill-opacity: 0.5;
+        }
+        .big circle.positive {
+            fill: steelblue;
+        }
+        .big circle.negative {
+            fill: orange;
+        }
+        .big circle:hover {
+          stroke: black;
+          stroke-width: 2;
+        }
+        .small circle {
+          stroke: gray;
+          fill: white;
+        }
+        .small circle:hover {
+          stroke: black;
+          stroke-width: 5;
+        }
+        .links li {
+          list-style: none;
+          display: inline;
+          margin: 5px;
+        }
+    </style>
+    <script src="../bower_components/d3/d3.js"></script>
+    <script src="../tornado.js"></script>
+    <script>
+      function convert (d) {
+          return {
+              value: parseFloat(d['VALUE']),
+              date: Date.parse(d['DATE'])
+          };
+      };
+      var chart = tornado();
+      var small = tornado().compact(true);
+      var data = [{
+          value: 1,
+          count: 1,
+          date: 2
+      },{
+          value: 2,
+          count: 1,
+          date: 2
+      },{
+          value: 3,
+          count: 1,
+          date: 2
+      }];
+      window.onload = function() {
+          var path = 'data/' + location.search.slice(1) + '.csv';
+          d3.csv(path, function(data) {
+              var converted = data.map(convert).filter(function(x) {
+                return !isNaN(parseFloat(x.value));
+              });
+              converted.sort(function(a, b) {
+                  return b.date - a.date;
+              });
+              var aggregated = aggregate(converted);
+              var interval = 10000 / data.length;
+              aggregated.forEach(function(data, frame) {
+                  setTimeout(function() {
+                      d3
+                          .select('.big')
+                          .data([data])
+                          .call(chart);
+                  }, frame * interval);
+              });
+              /* first batch just to set the x axis domain */
+              d3
+                  .select('.small')
+                  .data([aggregated[0]])
+                  .call(small);
+              /* i do not know the index of the last one */
+              var smallData = aggregated.pop();
+              d3
+                  .select('.small')
+                  .data([smallData])
+                  .call(small);
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <h3>
+      <a href="https://github.com/danse/tornado/">Tornado</a>
+      visualisation, calculating all averages from the last data point
+      up to the first
+    </h3>
+    <h4>
+      keep your mouse on a circle in order to show details of
+      represented data
+    <div class="big"></div>
+    <div class="links">
+      Other data:
+      <ul>
+        <li>
+          <a href="?euro-dollar">Euro/Dollar</a>
+        </li>
+        <li>
+          <a href="?DJIA-yearly">Dow Jones yearly</a>
+        </li>
+        <li>
+          <a href="?DJIA-daily">Dow Jones daily</a>
+        </li>
+      </ul>
+    </div>
+    <h4>
+      Tornado vis in compact mode, to stay on a single line
+    </h4>
+    <div class="small"></div>
+    <div>
+      tested on google Chrome
+    </div>
+  </body>
+</html>
