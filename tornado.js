@@ -23,7 +23,7 @@ function tornado(config) {
     scale = {
         x: d3.scale.linear(),
         y: d3.scale.linear(),
-        radius: d3.scale.log(),
+        radius: d3.scale.linear(),
         opacity: d3.scale.linear()
     },
     radius = {
