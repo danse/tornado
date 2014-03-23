@@ -39,6 +39,10 @@ separated values file formatted like <a
 href="https://raw.githubusercontent.com/danse/tornado/master/test/data/DJIA-daily.csv">those
 in the demos</a>
 
+So, if you want to try with your data, just substitute one of those
+files and serve the file locally with a static web server like node
+`serve`
+
 # The code is there, anyway
 
 The code is obviously using the awesome [d3 visualisation
