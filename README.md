@@ -24,7 +24,7 @@ for trends in data which are updated often, let us say on daily
 basis. A *tornado* vis can show you the latest trends, but also the
 data history.
 
-The data sets at the moment feature stock indexes, but i do not think
+The data sets at the moment feature financial indexes, but i do not think
 that they represent the best application of this vis. I would say that
 the best application is looking at metrics that you (or your company)
 can actually affect with some effort. A tornado vis will then show you
