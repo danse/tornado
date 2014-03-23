@@ -9,8 +9,9 @@ why just that? This is the question that tornado aims to answer
 Tornado is a sperimental visualisation which you can include on any
 web page or application. It shows all the possible arithmetic means of
 a time serie between now and the first value. The results often looks
-like a tornado. <a href="http://danse.github.io/tornado/test">Try a
-demo here</a>
+like a tornado. <a
+href="http://danse.github.io/tornado/test/?euro-dollar">Try a demo
+here</a>
 
 I plan to explain the design details <a
 href="doc/rationale.md">here</a> in the future if any discussion will
@@ -35,7 +36,7 @@ order to become more solid
 In order to do this, i think that the quicker way is clone the repo
 and add your data set under `test/`. The data file should be a comma
 separated values file formatted like <a
-href="https://github.com/danse/tornado/blob/master/test/euro-dollar.csv">those
+href="https://raw.githubusercontent.com/danse/tornado/master/test/data/DJIA-daily.csv">those
 in the demos</a>
 
 # The code is there, anyway
