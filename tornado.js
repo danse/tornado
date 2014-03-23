@@ -12,9 +12,9 @@ function tornado(config) {
     duration = 200,
     margin = {
         top: 100,
-        right: 100,
+        right: 200,
         bottom: 100,
-        left: 100
+        left: 200
     },
     totalWidth = 960,
     totalHeight = 500,
