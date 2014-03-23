@@ -31,6 +31,16 @@ can actually affect with some effort. A tornado vis will then show you
 the recent successes, but still remind you that this has to last in
 order to become more solid
 
+## Use on data points that will somehow cumulate
+
+This visualisation is more useful when we analyse data whose sum
+makes a sense, for example, weekly revenues. This is because the
+arithmetical mean is informative about the sum of its data points. The
+mean will cancel big values with opposite directions (positive and
+negative), and this is undesired especially when the specific value at
+a specific moment, and not its sum over time, is the interesting
+information
+
 # Try it with your data
 
 In order to do this, i think that the quicker way is clone the repo
