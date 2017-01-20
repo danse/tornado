@@ -1,0 +1,25 @@
+path.domain {
+    stroke: black;
+    fill: none;
+}
+.big circle {
+    fill-opacity: 0.5;
+}
+.big circle.positive {
+    fill: steelblue;
+}
+.big circle.negative {
+    fill: orange;
+}
+.big circle:hover {
+    stroke: black;
+    stroke-width: 2;
+}
+.small circle {
+    stroke: gray;
+    fill: white;
+}
+.small circle:hover {
+    stroke: black;
+    stroke-width: 5;
+}

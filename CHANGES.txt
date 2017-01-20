@@ -1,0 +1,5 @@
+0.1.0 - 20 January 2017
+
+The code here basically didn't change for the last three years, but
+now i am going to tag this in order to use the assets in an external
+project, so this is the first release

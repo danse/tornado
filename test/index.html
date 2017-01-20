@@ -1,43 +1,19 @@
 <html>
   <head>
-    <style>
-        body {
-          text-align: center;
-          padding: 100px;
-        }
-        path.domain {
-          stroke: black;
-          fill: none;
-        }
-        .big circle {
-            fill-opacity: 0.5;
-        }
-        .big circle.positive {
-            fill: steelblue;
-        }
-        .big circle.negative {
-            fill: orange;
-        }
-        .big circle:hover {
-          stroke: black;
-          stroke-width: 2;
-        }
-        .small circle {
-          stroke: gray;
-          fill: white;
-        }
-        .small circle:hover {
-          stroke: black;
-          stroke-width: 5;
-        }
-        .links li {
-          list-style: none;
-          display: inline;
-          margin: 5px;
-        }
-    </style>
     <script src="../bower_components/d3/d3.js"></script>
+    <link rel="stylesheet" href="../tornado.css">
     <script src="../tornado.js"></script>
+    <style>
+      body {
+        text-align: center;
+        padding: 100px;
+      }
+      .links li {
+        list-style: none;
+        display: inline;
+        margin: 5px;
+      }
+    </style>
     <script>
       function convert (d) {
           return {
